@@ -35,7 +35,6 @@ const deleteCourse = async (req, res) => {
     const publicIds = mediaIds.map(
       (mediaId) => mediaId.public_id
     );
-    console.log(publicIds);
 
     publicIds?.map(async (publicId) => {
       console.log("Deleting media with Id: " + publicId);
