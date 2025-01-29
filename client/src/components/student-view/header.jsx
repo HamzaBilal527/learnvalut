@@ -21,7 +21,7 @@ function StudentViewCommonHeader() {
           className="flex items-center hover:text-black">
           <GraduationCap className="h-8 w-8 mr-4 " />
           <span className="font-extrabold md:text-xl text-[14px]">
-            LEARN VALUT
+            LEARN VALUT!
           </span>
         </Link>
         <div className="flex items-center space-x-1">
