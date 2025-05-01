@@ -13,14 +13,19 @@ import StudentViewCourseDetailsPage from "./pages/student/course-details";
 import PaypalPaymentReturnPage from "./pages/student/payment-return";
 import StudentCoursesPage from "./pages/student/student-courses";
 import StudentViewCourseProgressPage from "./pages/student/course-progress";
+import StudentViewCommonHeader from "./components/student-view/header";
 
 function App() {
   const { auth } = useContext(AuthContext);
 
   return (
     <Routes>
+      <Route element={<StudentViewCommonHeader/>}>
+        
+      
       <Route path="" element={<StudentHomePage />} />
       <Route path="home" element={<StudentHomePage />} />
+      </Route>
       <Route
         path="/auth"
         element={
