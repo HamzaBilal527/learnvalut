@@ -22,7 +22,7 @@ function App() {
     <Routes>
       <Route 
       path="/"
-      element={<StudentViewCommonHeader/>}>
+      element={<StudentViewCommonLayout/>}>
         
       
       <Route path="" element={<StudentHomePage />} />
@@ -72,12 +72,11 @@ function App() {
       <Route
         path="/"
         element={
-          // <RouteGuard
-          //   element={<StudentViewCommonLayout />}
-          //   authenticated={auth?.authenticate}
-          //   user={auth?.user}
-          // />
-          <StudentViewCommonLayout />
+          <RouteGuard
+            element={<StudentViewCommonLayout />}
+            authenticated={auth?.authenticate}
+            user={auth?.user}
+          />
         }
       >
         {/* <Route path="" element={<StudentHomePage />} />
