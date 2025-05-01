@@ -20,7 +20,9 @@ function App() {
 
   return (
     <Routes>
-      <Route element={<StudentViewCommonHeader/>}>
+      <Route 
+      path="/"
+      element={<StudentViewCommonHeader/>}>
         
       
       <Route path="" element={<StudentHomePage />} />
