@@ -4,21 +4,19 @@ import { Button } from "../ui/button";
 import { useContext } from "react";
 import { AuthContext } from "@/context/auth-context";
 
-function StudentViewCommonHeader() {
+function StudentViewCommonHeaderNew() {
   const navigate = useNavigate();
   const { resetCredentials } = useContext(AuthContext);
 
   function handleLogout() {
-    resetCredentials();
-    sessionStorage.clear();
-    navigate("/")
+    navigate("/auth")
   }
 
   return (
     <header className="flex items-center justify-between p-4 border-b relative">
       <div className="flex items-center space-x-4">
         <Link
-          to="/home"
+          to="/"
           className="flex items-center hover:text-black">
           <GraduationCap className="h-8 w-8 mr-4 " />
           <span className="font-extrabold md:text-xl text-[14px]">
@@ -31,7 +29,7 @@ function StudentViewCommonHeader() {
             onClick={() => {
               location.pathname.includes("/courses")
                 ? null
-                : navigate("/courses");
+                : navigate("/out/courses");
             }}
             className="text-[14px] md:text-[16px] font-medium">
             Explore Courses
@@ -43,16 +41,16 @@ function StudentViewCommonHeader() {
           <div
             onClick={() => navigate("/student-courses")}
             className="flex cursor-pointer items-center gap-3">
-            <span className="font-extrabold md:text-xl text-[14px]">
+            {/* <span className="font-extrabold md:text-xl text-[14px]">
               My Courses
-            </span>
-            <TvMinimalPlay className="w-8 h-8 cursor-pointer" />
+            </span> */}
+            {/* <TvMinimalPlay className="w-8 h-8 cursor-pointer" /> */}
           </div>
-          <Button onClick={handleLogout}>Sign Out</Button>
+          <Button onClick={handleLogout}>Sign In</Button>
         </div>
       </div>
     </header>
   );
 }
 
-export default StudentViewCommonHeader;
+export default StudentViewCommonHeaderNew;

@@ -10,7 +10,7 @@ import {
 import { AuthContext } from "@/context/auth-context";
 import { useNavigate } from "react-router-dom";
 
-function StudentHomePage() {
+function StudentHomePageNew() {
   const {
     studentViewCoursesList,
     setStudentViewCoursesList,
@@ -30,7 +30,7 @@ function StudentHomePage() {
       JSON.stringify(currentFilter)
     );
 
-    navigate("/courses");
+    navigate("/out/courses");
   }
 
   async function fetchAllStudentViewCourses() {
@@ -48,9 +48,9 @@ function StudentHomePage() {
 
     if (response?.success) {
       if (response?.data) {
-        navigate(`/course-progress/${getCurrentCourseId}`);
+        navigate(`/out/course-progress/${getCurrentCourseId}`);
       } else {
-        navigate(`/course/details/${getCurrentCourseId}`);
+        navigate(`/out/course/details/${getCurrentCourseId}`);
       }
     }
   }
@@ -139,4 +139,4 @@ function StudentHomePage() {
   );
 }
 
-export default StudentHomePage;
+export default StudentHomePageNew;

@@ -13,21 +13,28 @@ import StudentViewCourseDetailsPage from "./pages/student/course-details";
 import PaypalPaymentReturnPage from "./pages/student/payment-return";
 import StudentCoursesPage from "./pages/student/student-courses";
 import StudentViewCourseProgressPage from "./pages/student/course-progress";
-import StudentViewCommonHeader from "./components/student-view/header";
+import StudentViewCommonLayoutNew from "./components/student-view/common-layoutnew";
+import StudentHomePageNew from "./pages/student/home/indexNew";
+import StudentViewCoursesPageNew from "./pages/student/courses/indexNew";
+import StudentViewCourseDetailsPageNew from "./pages/student/course-details/indexNew";
 
 function App() {
   const { auth } = useContext(AuthContext);
 
   return (
+    
     <Routes>
-      <Route 
-      path="/"
-      element={<StudentViewCommonLayout/>}>
-        
-      
-      <Route path="" element={<StudentHomePage />} />
-      <Route path="home" element={<StudentHomePage />} />
-      </Route>
+      <Route
+    path=""
+    element={<StudentViewCommonLayoutNew/>}>
+      <Route path="/" element={<StudentHomePageNew/>}/>
+      {/* <Route path="/out/home" element={<StudentHomePageNew/>}/> */}
+      <Route path="/out/courses" element={<StudentViewCoursesPageNew/>}/>
+      <Route path="/out/course/details/:id" element={<StudentViewCourseDetailsPageNew/>}/>
+
+
+
+    </Route>
       <Route
         path="/auth"
         element={
@@ -68,7 +75,6 @@ function App() {
           />
         }
       />
-      
       <Route
         path="/"
         element={
@@ -79,8 +85,8 @@ function App() {
           />
         }
       >
-        {/* <Route path="" element={<StudentHomePage />} />
-        <Route path="home" element={<StudentHomePage />} /> */}
+        <Route path="" element={<StudentHomePage />} />
+        <Route path="home" element={<StudentHomePage />} />
         <Route path="courses" element={<StudentViewCoursesPage />} />
         <Route
           path="course/details/:id"
